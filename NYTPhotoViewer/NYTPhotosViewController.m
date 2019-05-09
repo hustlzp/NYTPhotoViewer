@@ -133,7 +133,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [super viewDidAppear:animated];
     
     if (!self.overlayWasHiddenBeforeTransition) {
-        [self setOverlayViewHidden:NO animated:YES];
+        [self setOverlayViewHidden:NO animated:NO];
     }
 }
 
@@ -279,11 +279,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
     [self dismissViewControllerAnimated:YES userInitiated:YES completion:nil];
 }
 
-- (void)actionButtonTapped:(id)sender {
+- (void)actionButtonTapped:(UIBarButtonItem *)sender {
     BOOL clientDidHandle = NO;
     
-    if ([self.delegate respondsToSelector:@selector(photosViewController:handleActionButtonTappedForPhoto:)]) {
-        clientDidHandle = [self.delegate photosViewController:self handleActionButtonTappedForPhoto:self.currentlyDisplayedPhoto];
+    if ([self.delegate respondsToSelector:@selector(photosViewController:handleActionButtonTappedForPhoto:actionButton:)]) {
+        clientDidHandle = [self.delegate photosViewController:self handleActionButtonTappedForPhoto:self.currentlyDisplayedPhoto actionButton:sender];
     }
     
     if (!clientDidHandle && (self.currentlyDisplayedPhoto.image || self.currentlyDisplayedPhoto.imageData)) {

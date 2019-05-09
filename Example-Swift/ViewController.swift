@@ -41,7 +41,7 @@ final class ViewController: UIViewController {
 
 extension ViewController: NYTPhotosViewControllerDelegate {
     
-    func photosViewController(_ photosViewController: NYTPhotosViewController, handleActionButtonTappedFor photo: NYTPhoto) -> Bool {
+    func photosViewController(_ photosViewController: NYTPhotosViewController, handleActionButtonTappedFor photo: NYTPhoto, actionButton: UIBarButtonItem) -> Bool {
         guard UIDevice.current.userInterfaceIdiom == .pad, let photoImage = photo.image else {
             return false
         }
