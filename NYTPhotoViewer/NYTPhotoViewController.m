@@ -11,7 +11,7 @@
 #import "NYTScalingImageView.h"
 
 #ifdef ANIMATED_GIF_SUPPORT
-#import "FLAnimatedImage.h"
+#import <FLAnimatedImage/FLAnimatedImage.h>
 #endif
 
 NSString * const NYTPhotoViewControllerPhotoImageUpdatedNotification = @"NYTPhotoViewControllerPhotoImageUpdatedNotification";
