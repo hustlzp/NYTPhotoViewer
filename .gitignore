@@ -49,4 +49,4 @@ Vendor/bundle/
 bin/
 
 # Carthage
-Carthage/Build
+Carthage/
