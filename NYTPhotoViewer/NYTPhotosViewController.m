@@ -256,10 +256,10 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 
     NSInteger totalItems = [self totalItemCount];
     if (!overlayTitle && totalItems > 1) {
-        overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu of %lu", nil), (unsigned long)displayIndex, (unsigned long)totalItems];
+        overlayTitle = [NSString localizedStringWithFormat:NSLocalizedString(@"%lu / %lu", nil), (unsigned long)displayIndex, (unsigned long)totalItems];
     }
     
-//    self.overlayView.title = overlayTitle;
+    self.overlayView.title = overlayTitle;
     
     UIView *captionView;
     if ([self.delegate respondsToSelector:@selector(photosViewController:captionViewForPhoto:)]) {
