@@ -231,7 +231,7 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
 - (void)addOverlayView {
     NSAssert(self.overlayView != nil, @"_overlayView must be set during initialization, to provide bar button items for this %@", NSStringFromClass([self class]));
 
-    UIColor *textColor = self.view.tintColor ?: [UIColor whiteColor];
+    UIColor *textColor = [UIColor colorWithRed:0x99 / 255.0 green:0x99 / 255.0 blue:0x99 / 255.0 alpha:1];
     self.overlayView.titleTextAttributes = @{NSForegroundColorAttributeName: textColor};
     
     [self updateOverlayInformation];
